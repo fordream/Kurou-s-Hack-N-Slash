@@ -146,7 +146,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 728875689}
   - 50: {fileID: 728875690}
-  m_Layer: 0
+  - 58: {fileID: 728875692}
+  - 95: {fileID: 728875691}
+  - 114: {fileID: 728875694}
+  m_Layer: 8
   m_Name: Parent_Kurou
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,9 +163,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 728875688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.26000023, y: .529999971, z: 0}
+  m_LocalPosition: {x: -3.07999992, y: .529999971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 892965909}
   - {fileID: 1057472568}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -181,10 +185,84 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!95 &728875691
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728875688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4d23b127aacd034db987805360f40d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!58 &728875692
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728875688}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .5
+--- !u!114 &728875694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728875688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d1777ad1273e244bc9396e099b1170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 10
+  groundCheck: {fileID: 892965909}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  jumpForce: 700
 --- !u!4 &728968624 stripped
 Transform:
   m_PrefabParentObject: {fileID: 466488, guid: 02d9d77a6f7670c4692c8d664f03cd23, type: 2}
   m_PrefabInternal: {fileID: 236512894}
+--- !u!1 &892965908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 892965909}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &892965909
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892965908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.200000003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 728875689}
+  m_RootOrder: 0
 --- !u!1 &920478414
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +386,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1057472568}
   - 212: {fileID: 1057472569}
-  - 58: {fileID: 1057472570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SomethingOfKurou
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +404,7 @@ Transform:
   m_LocalScale: {x: 6.23345757, y: 6.23345709, z: 6.23345709}
   m_Children: []
   m_Father: {fileID: 728875689}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!212 &1057472569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -352,21 +429,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!58 &1057472570
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057472567}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: .100000001
 --- !u!1001 &1187661076
 Prefab:
   m_ObjectHideFlags: 0
